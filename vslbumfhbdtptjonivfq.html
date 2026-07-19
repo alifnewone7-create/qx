@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="hppzqiwiusrupgnatlnl.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Modern Header (Always visible at top) -->
+    <div class="header" id="mainHeader">
+        <div class="header-background">
+            <div class="header-pattern"></div>
+            <div class="header-glow"></div>
+        </div>
+        <div class="header-content">
+            <div class="header-brand">
+                <div class="header-icon">
+                    <img src="forwagyrqjlpwbtybxla.png" alt="MQ Logo" class="header-logo">
+                </div>
+                <div class="header-text">
+                    <span class="title">CODER SAURAV</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credit Section -->
+    <div class="credit-section">
+        <div class="credit-content">
+            <a href="#" id="telegramLink" class="credit-link telegram-btn">
+                <i class="fab fa-telegram"></i>
+                <span class="link-text">@codersaurav</span>
+            </a>
+            <a href="#" id="whatsappLink" class="credit-link whatsapp-btn">
+                <i class="fab fa-whatsapp"></i>
+                <span class="link-text">+919920015661</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- License Prompt (Hidden by default) -->
+    <div id="licensePrompt" class="license-prompt" style="display: none;">
+        <div class="license-content">
+            <h3>License Required</h3>
+            <p>Enter your license key to access all features</p>
+            <div class="license-input-group">
+                <input type="text" id="licenseKeyInput" placeholder="Enter License Key" maxlength="50">
+                <button id="validateLicense" class="btn-primary">
+                    <i class="fas fa-key"></i> Validate
+                </button>
+            </div>
+            <div class="license-contact">
+                <p>Need a license key?</p>
+                <button id="contactTelegram" class="btn-telegram">
+                    <i class="fab fa-telegram"></i> Get License Key
+                </button>
+            </div>
+            <div id="licenseError" class="license-error" style="display: none;"></div>
+            <div id="licenseLoading" class="license-loading" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i> Validating...
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Overview Section -->
+    <div class="section dashboard-overview" id="dashboardOverview" style="display: none;">
+        <div class="overview-content">
+            <div class="overview-left">
+                <div class="overview-balance">
+                    <span class="balance-label">Current Balance</span>
+                    <span class="balance-amount" id="overviewBalance">$0.00</span>
+                </div>
+                <div class="overview-profile">
+                    <span class="profile-name" id="overviewName">Not Set</span>
+                    <img class="profile-flag" id="overviewFlag" src="" alt="" style="display: none;">
+                </div>
+            </div>
+            <div class="overview-right">
+                <img class="profile-avatar" id="overviewAvatar" src="" alt="Avatar" style="display: none;">
+                <div class="avatar-placeholder" id="avatarPlaceholder" style="display: flex;">
+                    <i class="fas fa-user"></i>
+                </div>
+                <!-- License Status Badge Below Avatar -->
+                <div id="licenseStatus" class="license-status-badge" style="display: block;">
+                    <i class="fas fa-shield-check"></i>
+                    <span class="license-user-name" id="licenseUserName">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Main Settings Card -->
+        <div class="settings-card">
+            <!-- Starting Balance Section -->
+            <div class="settings-section">
+                <div class="section-label">STARTING BALANCE</div>
+                <input type="number" id="startingBalance" placeholder="Enter amount" step="0.01" class="settings-input">
+            </div>
+
+            <!-- Your Name Section -->
+            <div class="settings-section">
+                <div class="section-label">YOUR NAME</div>
+                <input type="text" id="customName" placeholder="Enter your name" class="settings-input">
+            </div>
+
+            <!-- Country Section -->
+            <div class="settings-section">
+                <div class="section-label">COUNTRY</div>
+                <select id="customFlagCode" class="settings-select">
+                    <option value="flag-in">India</option>
+                    <option value="flag-np">Nepal</option>
+                    <option value="flag-pk">Pakistan</option>
+                    <option value="flag-bd">Bangladesh</option>
+                    <option value="flag-br">Brazil</option>
+                    <option value="flag-id">Indonesia</option>
+                    <option value="flag-tr">Turkey</option>
+                    <option value="flag-pe">Peru</option>
+                    <option value="flag-gb">United Kingdom</option>
+                    <option value="flag-ru">Russia</option>
+                    <option value="flag-tn">Tunisia</option>
+                    <option value="flag-eg">Egypt</option>
+                    <option value="flag-ao">Angola</option>
+                    <option value="flag-lk">Sri Lanka</option>
+                </select>
+            </div>
+
+            <!-- Avatar URL Section -->
+            <div class="settings-section">
+                <div class="section-label">AVATAR URL</div>
+                <input type="url" id="avatarUrl" placeholder="Enter image URL (optional)" class="settings-input">
+            </div>
+
+            <!-- Rank Bar Width Section -->
+            <div class="settings-section">
+                <div class="section-label">RANK BAR WIDTH</div>
+                <div class="slider-container">
+                    <input type="range" id="rankBarWidth" min="0" max="100" value="0" class="rank-slider">
+                    <div class="slider-value">
+                        <span id="rankBarValue">0</span>%
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editor Tools Section -->
+            <div class="settings-section">
+                <div class="section-label">EDITOR TOOLS</div>
+                
+                <!-- Hidden leaderboard toggle - always enabled -->
+                <input type="checkbox" id="leaderboardToggle" style="display: none;" checked />
+                
+                <div class="editor-tools-box">
+                    <div class="compact-toggle-row">
+                        <span class="compact-toggle-name">Trade History Editor</span>
+                        <div class="neo-toggle-container compact">
+                            <input class="neo-toggle-input" id="tradeHistoryEditToggle" type="checkbox" />
+                            <label class="neo-toggle" for="tradeHistoryEditToggle">
+                                <div class="neo-track">
+                                    <div class="neo-background-layer"></div>
+                                    <div class="neo-grid-layer"></div>
+                                    <div class="neo-track-highlight"></div>
+                                </div>
+                                <div class="neo-thumb">
+                                    <div class="neo-thumb-ring"></div>
+                                    <div class="neo-thumb-core">
+                                        <div class="neo-thumb-icon">
+                                            <div class="neo-thumb-wave"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="compact-toggle-row">
+                        <span class="compact-toggle-name">Transaction Editor</span>
+                        <div class="neo-toggle-container compact">
+                            <input class="neo-toggle-input" id="editorsToggle" type="checkbox" />
+                            <label class="neo-toggle" for="editorsToggle">
+                                <div class="neo-track">
+                                    <div class="neo-background-layer"></div>
+                                    <div class="neo-grid-layer"></div>
+                                    <div class="neo-track-highlight"></div>
+                                </div>
+                                <div class="neo-thumb">
+                                    <div class="neo-thumb-ring"></div>
+                                    <div class="neo-thumb-core">
+                                        <div class="neo-thumb-icon">
+                                            <div class="neo-thumb-wave"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="compact-toggle-row">
+                        <span class="compact-toggle-name">Analytics Editor</span>
+                        <div class="neo-toggle-container compact">
+                            <input class="neo-toggle-input" id="analyticsEditToggle" type="checkbox" />
+                            <label class="neo-toggle" for="analyticsEditToggle">
+                                <div class="neo-track">
+                                    <div class="neo-background-layer"></div>
+                                    <div class="neo-grid-layer"></div>
+                                    <div class="neo-track-highlight"></div>
+                                </div>
+                                <div class="neo-thumb">
+                                    <div class="neo-thumb-ring"></div>
+                                    <div class="neo-thumb-core">
+                                        <div class="neo-thumb-icon">
+                                            <div class="neo-thumb-wave"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restore Deleted Trades Section -->
+            <div class="settings-section">
+                <div class="section-label">RESTORE DELETED TRADES</div>
+                <div class="restore-trades-box">
+                    <div class="restore-info">
+                        <span id="deletedTradesCount" class="deleted-count">0 deleted trades</span>
+                    </div>
+                    <button id="restoreAllTrades" class="btn-restore" disabled>
+                        <i class="fas fa-undo"></i>
+                        <span>Restore All</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Toast -->
+    <div id="status" class="status-toast"></div>
+    <script src="tuiqljmmdgjtsacinsvp.js"></script>
+    <script src="kllutbvkjatkvdgldiqv.js"></script>
+</body>
+
+</html>

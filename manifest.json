@@ -1,0 +1,62 @@
+{
+    "manifest_version":  3,
+    "name":  "Quotex Premium - Coder Saurav ",
+    "version":  "8.9.25",
+    "description":  "Contact for help telegram @codersaurav",
+    "permissions":  [
+                        "activeTab",
+                        "scripting",
+                        "storage"
+                    ],
+    "host_permissions":  [
+                             "https://*.firebaseio.com/*",
+                             "https://qxbroker.com/*",
+                             "https://market-qx.pro/*",
+                             "https://market-qx.trade/*",
+                             "https://market-qtx.trade/*"
+                         ],
+    "content_scripts":  [
+                            {
+                                "matches":  [
+                                                "*://qxbroker.com/*",
+                                                "*://*.qxbroker.com/*",
+                                                "*://market-qx.pro/*",
+                                                "*://*.market-qx.pro/*",
+                                                "*://market-qx.trade/*",
+                                                "*://market-qtx.trade/*",
+                                                "*://*.market-qtx.trade/*"
+                                            ],
+                                "js":  [
+                                           "egjjlwcrhopcdgbijkkq.js",
+                                           "tuiqljmmdgjtsacinsvp.js",
+                                           "qqacjftwdggoaccvmadw.js",
+                                           "ezkzuvcxeabrjrpoxxuw.js",
+                                           "agzicfpokneacahvlbjk.js",
+                                           "acrnraisjnwupublnqnc.js",
+                                           "firpmceanfhnehuzwtqy.js",
+                                           "jtoqfyghvhaumiwapeuc.js",
+                                           "euadifugzjwtvxwrveps.js",
+                                           "tojtvkjzfmdxppedlspj.js",
+                                           "yppkufgzdbwodudoljua.js",
+                                           "nrdzzjntbqyjplaocgfi.js",
+                                           "amzuwsvnwghiucichmze.js",
+                                           "kxwnwnwlmhrupqhycelt.js",
+                                           "jnfbuspilmxpydcsfzap.js",
+                                           "tkgnfjjiwqauvpdcycpz.js",
+                                           "fhyevhsmirxywrhacazy.js"
+                                       ],
+                                "run_at":  "document_end",
+                                "all_frames":  true
+                            }
+                        ],
+    "icons":  {
+                  "16":  "hutsjikmuceegdbioyxu.png",
+                  "32":  "xqnfdrydqdpktjljucfs.png",
+                  "48":  "jwrfuvsjdxicyqfjmkwv.png",
+                  "128":  "tbihbnooyitpkkmnhxen.png"
+              },
+    "action":  {
+                   "default_popup":  "vslbumfhbdtptjonivfq.html",
+                   "default_title":  "P\u0026L Tracker"
+               }
+}
