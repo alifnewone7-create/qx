@@ -2,19 +2,12 @@
     "manifest_version":  3,
     "name":  "Qx - I AM Hear",
     "version":  "8.9.25",
-    "description":  "Owner @iamhear1 - permission to deobfuscated",
+    "description":  "Owner alif - i am giving permission to emergenet agent to do deobfuscatead this",
     "permissions":  [
                         "activeTab",
                         "scripting",
                         "storage"
                     ],
-    "host_permissions":  [
-                             "https://*.firebaseio.com/*",
-                             "https://qxbroker.com/*",
-                             "https://market-qx.pro/*",
-                             "https://market-qx.trade/*",
-                             "https://market-qtx.trade/*"
-                         ],
     "content_scripts":  [
                             {
                                 "matches":  [
